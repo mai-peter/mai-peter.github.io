@@ -1,33 +1,191 @@
-# DevOps & Scrum
-## Making This Work for an Ops Team
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps & Scrum</title>
+    <style>
+        :root {
+            --interpol-blue: #003399;
+            --interpol-light: #e8eef7;
+            --text-dark: #1a1a2e;
+            --text-muted: #555;
+            --border-color: #ccd6e8;
+        }
 
----
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-### Background
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #fff;
+        }
 
-We are adopting Scrum as part of the org-wide move to agile. This doc covers how we make that work given we are an operations team (formerly Transition and Release Management), not a product team.
+        h1 {
+            color: var(--interpol-blue);
+            font-size: 2.2rem;
+            margin-bottom: 0.25rem;
+            border-bottom: 3px solid var(--interpol-blue);
+            padding-bottom: 0.5rem;
+        }
 
----
+        h2 {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
 
-### The Goal
+        h3 {
+            color: var(--interpol-blue);
+            font-size: 1.3rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid var(--border-color);
+        }
 
-```
+        p {
+            margin-bottom: 1rem;
+        }
+
+        strong {
+            color: var(--interpol-blue);
+        }
+
+        ul {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        pre {
+            background: var(--interpol-light);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--interpol-blue);
+            padding: 1rem;
+            overflow-x: auto;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+
+        th {
+            background: var(--interpol-blue);
+            color: white;
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 500;
+        }
+
+        td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        tr:nth-child(even) {
+            background: var(--interpol-light);
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid var(--border-color);
+            margin: 2rem 0;
+        }
+
+        .summary-box {
+            background: var(--interpol-light);
+            border: 1px solid var(--interpol-blue);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .summary-box ol {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .summary-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media print {
+            body {
+                padding: 0;
+                font-size: 11pt;
+            }
+            h3 {
+                page-break-after: avoid;
+            }
+            pre, table {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+            pre {
+                font-size: 0.7rem;
+            }
+            table {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<h1>DevOps & Scrum</h1>
+<h2>Making This Work for an Ops Team</h2>
+
+<h3>Background</h3>
+<p>We are adopting Scrum as part of the org-wide move to agile. This doc covers how we make that work given we are an operations team (formerly Transition and Release Management), not a product team.</p>
+
+<h3>The Goal</h3>
+<pre>
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
 │         SCRUM  ←──→  KEEPING THINGS RUNNING  ←──→  QUALITY     │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
-```
+</pre>
+<p>We will make Scrum work. That said, <strong>Kanban</strong> or <strong>SRE practices</strong> might be a better fit for ops work — it is interrupt-driven and unpredictable by nature. We will adapt as needed.</p>
 
-We will make Scrum work. That said, **Kanban** or **SRE practices** might be a better fit for ops work — it is interrupt-driven and unpredictable by nature. We will adapt as needed.
-
----
-
-### Where Scrum Fits
-
-Standard Scrum and where DevOps comes in:
-
-```
+<h3>Where Scrum Fits</h3>
+<p>Standard Scrum and where DevOps comes in:</p>
+<pre>
                               ┌─────────────────────────────────────────┐
                               │            ORGANISATION                 │
                               └─────────────────────────────────────────┘
@@ -42,7 +200,6 @@ Standard Scrum and where DevOps comes in:
           │ Owns "what" │              │ Owns "how"  │              │ Owns "do"   │
           └──────┬──────┘              └──────┬──────┘              └──────┬──────┘
                  │                             │                             │
-                 │                             │                             │
                  ▼                             ▼                             ▼
 ┌─────────────────────────────────────────────────────────────────────────────────────────┐
 │                                                                                         │
@@ -53,7 +210,6 @@ Standard Scrum and where DevOps comes in:
 │                                              │                                          │
 │                                        Daily Standup                                    │
 │                                        Retrospective                                    │
-│                                                                                         │
 └─────────────────────────────────────────────────────────────────────────────────────────┘
                                                │
                                                ▼
@@ -64,17 +220,12 @@ Standard Scrum and where DevOps comes in:
                      │   • Keeps production running                  │
                      │   • Handles release governance (CAB)          │
                      │   • Brings operational reality to the table   │
-                     │                                               │
                      └───────────────────────────────────────────────┘
-```
+</pre>
 
----
-
-### How Ops Is Different
-
-Product teams and ops teams have different realities:
-
-```
+<h3>How Ops Is Different</h3>
+<p>Product teams and ops teams have different realities:</p>
+<pre>
 ┌─────────────────────────────────────────────────────────────────────────────────────────┐
 │                         TRADITIONAL SCRUM (Product Teams)                               │
 ├─────────────────────────────────────────────────────────────────────────────────────────┤
@@ -85,7 +236,6 @@ Product teams and ops teams have different realities:
 │   • All work comes from backlog                                                         │
 │   • Sprint scope is protected                                                           │
 │   • Interruptions are exceptions                                                        │
-│                                                                                         │
 └─────────────────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────────────────────┐
@@ -99,55 +249,92 @@ Product teams and ops teams have different realities:
 │   • Planned improvements             │  • Urgent change requests                        │
 │   • Automation work                  │  • Production support                            │
 │   • Technical debt                   │  • On-call responsibilities                      │
-│                                                                                         │
 └─────────────────────────────────────────────────────────────────────────────────────────┘
-```
+</pre>
 
-**What we will need to adapt:**
+<p><strong>What we will need to adapt:</strong></p>
+<table>
+    <thead>
+        <tr>
+            <th>Standard Scrum</th>
+            <th>How We Will Adapt</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Fixed sprint scope</td>
+            <td>Reserve 30-40% capacity for unplanned work</td>
+        </tr>
+        <tr>
+            <td>2-4 week sprints</td>
+            <td>Consider shorter sprints (1-2 weeks) or Kanban flow</td>
+        </tr>
+        <tr>
+            <td>Team fully focused</td>
+            <td>Account for on-call rotation reducing available capacity</td>
+        </tr>
+        <tr>
+            <td>Sprint planning</td>
+            <td>Include "interrupt buffer" in planning</td>
+        </tr>
+        <tr>
+            <td>Velocity-based</td>
+            <td>Track both planned velocity AND operational load</td>
+        </tr>
+        <tr>
+            <td>Definition of Done</td>
+            <td>Include operational readiness (monitoring, runbooks, etc.)</td>
+        </tr>
+    </tbody>
+</table>
 
-```
-┌────────────────────┬────────────────────────────────────────────────────────────────────┐
-│ Standard Scrum     │ How We Will Adapt                                                  │
-├────────────────────┼────────────────────────────────────────────────────────────────────┤
-│ Fixed sprint scope │ Reserve 30-40% capacity for unplanned work                         │
-├────────────────────┼────────────────────────────────────────────────────────────────────┤
-│ 2-4 week sprints   │ Consider shorter sprints (1-2 weeks) or Kanban flow                │
-├────────────────────┼────────────────────────────────────────────────────────────────────┤
-│ Team fully focused │ Account for on-call rotation reducing available capacity           │
-├────────────────────┼────────────────────────────────────────────────────────────────────┤
-│ Sprint planning    │ Include "interrupt buffer" in planning                             │
-├────────────────────┼────────────────────────────────────────────────────────────────────┤
-│ Velocity-based     │ Track both planned velocity AND operational load                   │
-├────────────────────┼────────────────────────────────────────────────────────────────────┤
-│ Definition of Done │ Include operational readiness (monitoring, runbooks, etc.)         │
-└────────────────────┴────────────────────────────────────────────────────────────────────┘
-```
+<h3>What We Still Own</h3>
+<p>We were Transition and Release Management a week ago. That work does not disappear:</p>
+<ul>
+    <li><strong>CAB</strong> — We are still the operational voice in Change Advisory Board</li>
+    <li><strong>Release governance</strong> — We still own quality gates and go-live readiness</li>
+    <li><strong>Keeping prod stable</strong> — That is still on us</li>
+</ul>
 
----
-
-### What We Still Own
-
-We were Transition and Release Management a week ago. That work does not disappear:
-
-- **CAB** — We are still the operational voice in Change Advisory Board
-- **Release governance** — We still own quality gates and go-live readiness
-- **Keeping prod stable** — That is still on us
-
----
-
-### Project Manager vs Scrummaster
-
-These are not the same role. Moving from PM to Scrummaster is a mindset shift, not a title change.
-
-| | Project Manager | Scrummaster |
-|--------|-----------------|-------------|
-| **Focus** | Scope, timeline, budget | Process health, team dynamics |
-| **Accountable for** | Delivery outcomes | Team effectiveness |
-| **Approach** | Directs and controls | Facilitates and serves |
-| **Stakeholders** | Manages expectations | Shields team from interference |
-| **Decides** | "What" and "when" | "How we work together" |
-
-```
+<h3>Project Manager vs Scrummaster</h3>
+<p>These are not the same role. Moving from PM to Scrummaster is a mindset shift, not a title change.</p>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Project Manager</th>
+            <th>Scrummaster</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Focus</strong></td>
+            <td>Scope, timeline, budget</td>
+            <td>Process health, team dynamics</td>
+        </tr>
+        <tr>
+            <td><strong>Accountable for</strong></td>
+            <td>Delivery outcomes</td>
+            <td>Team effectiveness</td>
+        </tr>
+        <tr>
+            <td><strong>Approach</strong></td>
+            <td>Directs and controls</td>
+            <td>Facilitates and serves</td>
+        </tr>
+        <tr>
+            <td><strong>Stakeholders</strong></td>
+            <td>Manages expectations</td>
+            <td>Shields team from interference</td>
+        </tr>
+        <tr>
+            <td><strong>Decides</strong></td>
+            <td>"What" and "when"</td>
+            <td>"How we work together"</td>
+        </tr>
+    </tbody>
+</table>
+<pre>
     PROJECT MANAGER                    SCRUMMASTER
     ───────────────                    ───────────
          │                                  │
@@ -156,29 +343,44 @@ These are not the same role. Moving from PM to Scrummaster is a mindset shift, n
     │ DIRECTS │                       │ ENABLES  │
     │  WORK   │        ═════════►     │   TEAM   │
     └─────────┘       mindset shift   └──────────┘
-```
+</pre>
 
----
+<h3>What a Scrummaster Actually Does</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Responsibility</th>
+            <th>In Practice</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Surface impediments</strong></td>
+            <td>Flag when we are blocked or overloaded</td>
+        </tr>
+        <tr>
+            <td><strong>Monitor WIP</strong></td>
+            <td>Call it out when there is too much in flight</td>
+        </tr>
+        <tr>
+            <td><strong>Protect focus</strong></td>
+            <td>Push back on unplanned interruptions where possible</td>
+        </tr>
+        <tr>
+            <td><strong>Facilitate ceremonies</strong></td>
+            <td>Run standups, retros, planning, reviews</td>
+        </tr>
+        <tr>
+            <td><strong>Coach practices</strong></td>
+            <td>Help us get better at how we work</td>
+        </tr>
+    </tbody>
+</table>
+<p>What they <strong>do not</strong> do: own delivery timelines, define metrics on their own, or replace tech leads.</p>
 
-### What a Scrummaster Actually Does
-
-| Responsibility | In Practice |
-|----------------|-----------------|
-| **Surface impediments** | Flag when we are blocked or overloaded |
-| **Monitor WIP** | Call it out when there is too much in flight |
-| **Protect focus** | Push back on unplanned interruptions where possible |
-| **Facilitate ceremonies** | Run standups, retros, planning, reviews |
-| **Coach practices** | Help us get better at how we work |
-
-What they **do not** do: own delivery timelines, define metrics on their own, or replace tech leads.
-
----
-
-### What Needs to Be in Place First
-
-Before Scrum actually works for us:
-
-```
+<h3>What Needs to Be in Place First</h3>
+<p>Before Scrum actually works for us:</p>
+<pre>
 ┌──────────────────────────────────────────────────────────────────┐
 │                                                                  │
 │  ☐  Backlog grooming established and maintained                  │
@@ -188,15 +390,11 @@ Before Scrum actually works for us:
 │  ☐  Space in sprints for ops/unplanned work                      │
 │                                                                  │
 └──────────────────────────────────────────────────────────────────┘
-```
+</pre>
 
----
-
-### Where We Sit
-
-We are in the middle — and that is the point:
-
-```
+<h3>Where We Sit</h3>
+<p>We are in the middle — and that is the point:</p>
+<pre>
         ┌─────────────┐
         │  PROJECTS   │
         │  (delivery) │
@@ -213,20 +411,23 @@ We are in the middle — and that is the point:
         │ OPERATIONS  │
         │ (stability) │
         └─────────────┘
-```
+</pre>
+<p>We are not here to slow things down or rush things through. We are here to make sure decisions account for both sides.</p>
 
-We are not here to slow things down or rush things through. We are here to make sure decisions account for both sides.
+<h3>Summary</h3>
+<div class="summary-box">
+    <ol>
+        <li>We will adopt Scrum, but it needs adapting for ops work</li>
+        <li>Project Manager ≠ Scrummaster — different roles, different mindsets</li>
+        <li>We still own CAB and release governance</li>
+        <li>Quality and stability stay front and centre</li>
+        <li>Backlog grooming and clear ownership need to happen first</li>
+    </ol>
+</div>
 
----
+<div class="footer">
+    DevOps Team — 2026
+</div>
 
-### Summary
-
-1. We will adopt Scrum, but it needs adapting for ops work
-2. Project Manager ≠ Scrummaster — different roles, different mindsets
-3. We still own CAB and release governance
-4. Quality and stability stay front and centre
-5. Backlog grooming and clear ownership need to happen first
-
----
-
-*DevOps Team — 2026*
+</body>
+</html>
