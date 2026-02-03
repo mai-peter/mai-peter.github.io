@@ -23,6 +23,108 @@ We are committed to making Scrum work for DevOps. However, we note that **Kanban
 
 ---
 
+### The Scrum Ecosystem
+
+Standard Scrum framework and where DevOps participates:
+
+```
+                              ┌─────────────────────────────────────────┐
+                              │            ORGANISATION                 │
+                              └─────────────────────────────────────────┘
+                                               │
+                 ┌─────────────────────────────┼─────────────────────────────┐
+                 │                             │                             │
+                 ▼                             ▼                             ▼
+          ┌─────────────┐              ┌─────────────┐              ┌─────────────┐
+          │   PRODUCT   │              │    SCRUM    │              │    SCRUM    │
+          │    OWNER    │              │   MASTER    │              │    TEAM     │
+          │             │              │             │              │             │
+          │ Owns "what" │              │ Owns "how"  │              │ Owns "do"   │
+          └──────┬──────┘              └──────┬──────┘              └──────┬──────┘
+                 │                             │                             │
+                 │                             │                             │
+                 ▼                             ▼                             ▼
+┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                         │
+│    ┌──────────┐      ┌──────────┐      ┌──────────┐      ┌──────────┐      ┌────────┐  │
+│    │ PRODUCT  │ ───► │  SPRINT  │ ───► │  SPRINT  │ ───► │  SPRINT  │ ───► │ INCRE- │  │
+│    │ BACKLOG  │      │ PLANNING │      │ (2-4 wk) │      │  REVIEW  │      │  MENT  │  │
+│    └──────────┘      └──────────┘      └──────────┘      └──────────┘      └────────┘  │
+│                                              │                                          │
+│                                        Daily Standup                                    │
+│                                        Retrospective                                    │
+│                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────┘
+                                               │
+                                               ▼
+                     ┌───────────────────────────────────────────────┐
+                     │                    DEVOPS                     │
+                     │                                               │
+                     │   • Enables deployment of increments          │
+                     │   • Maintains production environment          │
+                     │   • Provides release governance (CAB)         │
+                     │   • Feeds operational insights back to team   │
+                     │                                               │
+                     └───────────────────────────────────────────────┘
+```
+
+---
+
+### Scrum Adapted for Operations
+
+An operations-focused team has different realities than a product team:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                         TRADITIONAL SCRUM (Product Teams)                               │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                         │
+│   100% PLANNED WORK                                                                     │
+│   ████████████████████████████████████████████████████████████████████████████████████  │
+│                                                                                         │
+│   • All work comes from backlog                                                         │
+│   • Sprint scope is protected                                                           │
+│   • Interruptions are exceptions                                                        │
+│                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                         OPERATIONS-ADAPTED SCRUM (DevOps Teams)                         │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                         │
+│   PLANNED WORK (60-70%)              │  UNPLANNED/REACTIVE (30-40%)                     │
+│   ████████████████████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  │
+│                                                                                         │
+│   • Backlog items                    │  • Incidents & outages                           │
+│   • Planned improvements             │  • Urgent change requests                        │
+│   • Automation work                  │  • Production support                            │
+│   • Technical debt                   │  • On-call responsibilities                      │
+│                                                                                         │
+└─────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+**Key Adaptations for Ops:**
+
+```
+┌────────────────────┬────────────────────────────────────────────────────────────────────┐
+│ Standard Scrum     │ Operations Adaptation                                              │
+├────────────────────┼────────────────────────────────────────────────────────────────────┤
+│ Fixed sprint scope │ Reserve 30-40% capacity for unplanned work                         │
+├────────────────────┼────────────────────────────────────────────────────────────────────┤
+│ 2-4 week sprints   │ Consider shorter sprints (1-2 weeks) or Kanban flow                │
+├────────────────────┼────────────────────────────────────────────────────────────────────┤
+│ Team fully focused │ Account for on-call rotation reducing available capacity           │
+├────────────────────┼────────────────────────────────────────────────────────────────────┤
+│ Sprint planning    │ Include "interrupt buffer" in planning                             │
+├────────────────────┼────────────────────────────────────────────────────────────────────┤
+│ Velocity-based     │ Track both planned velocity AND operational load                   │
+├────────────────────┼────────────────────────────────────────────────────────────────────┤
+│ Definition of Done │ Include operational readiness (monitoring, runbooks, etc.)         │
+└────────────────────┴────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
 ### Retained Responsibilities
 
 As the former Transition and Release Management team, we retain critical functions:
