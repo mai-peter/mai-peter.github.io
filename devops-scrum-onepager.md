@@ -1,31 +1,31 @@
-# DevOps & Scrum Adoption
-## Operational Considerations for the Transition
+# DevOps & Scrum
+## Making This Work for an Ops Team
 
 ---
 
-### Context
+### Background
 
-The DevOps team (formerly Transition and Release Management) is adopting Scrum as part of the organisation's move to agile. This document outlines key considerations to ensure a successful transition while maintaining operational excellence.
+We're adopting Scrum as part of the org-wide move to agile. This doc covers how we make that work given we're an operations team (formerly Transition and Release Management), not a product team.
 
 ---
 
-### Our Commitment
+### The Goal
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                                                                 │
-│   SCRUM ADOPTION  ←──→  OPERATIONAL EXCELLENCE  ←──→  QUALITY  │
+│         SCRUM  ←──→  KEEPING THINGS RUNNING  ←──→  QUALITY     │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-We are committed to making Scrum work for DevOps. However, we note that **Kanban** or **SRE practices** may be better suited to operational work, which is often interrupt-driven and unplanned. We will adapt where necessary.
+We'll make Scrum work. That said, **Kanban** or **SRE practices** might be a better fit for ops work — it's interrupt-driven and unpredictable by nature. We'll adapt as needed.
 
 ---
 
-### The Scrum Ecosystem
+### Where Scrum Fits
 
-Standard Scrum framework and where DevOps participates:
+Standard Scrum and where DevOps comes in:
 
 ```
                               ┌─────────────────────────────────────────┐
@@ -60,19 +60,19 @@ Standard Scrum framework and where DevOps participates:
                      ┌───────────────────────────────────────────────┐
                      │                    DEVOPS                     │
                      │                                               │
-                     │   • Enables deployment of increments          │
-                     │   • Maintains production environment          │
-                     │   • Provides release governance (CAB)         │
-                     │   • Feeds operational insights back to team   │
+                     │   • Gets increments deployed                  │
+                     │   • Keeps production running                  │
+                     │   • Handles release governance (CAB)          │
+                     │   • Brings operational reality to the table   │
                      │                                               │
                      └───────────────────────────────────────────────┘
 ```
 
 ---
 
-### Scrum Adapted for Operations
+### How Ops Is Different
 
-An operations-focused team has different realities than a product team:
+Product teams and ops teams have different realities:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────────┐
@@ -89,7 +89,7 @@ An operations-focused team has different realities than a product team:
 └─────────────────────────────────────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────────────────────────────────────┐
-│                         OPERATIONS-ADAPTED SCRUM (DevOps Teams)                         │
+│                         OPS-ADAPTED SCRUM (DevOps Teams)                                │
 ├─────────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                         │
 │   PLANNED WORK (60-70%)              │  UNPLANNED/REACTIVE (30-40%)                     │
@@ -103,11 +103,11 @@ An operations-focused team has different realities than a product team:
 └─────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-**Key Adaptations for Ops:**
+**What we'll need to adapt:**
 
 ```
 ┌────────────────────┬────────────────────────────────────────────────────────────────────┐
-│ Standard Scrum     │ Operations Adaptation                                              │
+│ Standard Scrum     │ How We'll Adapt                                                    │
 ├────────────────────┼────────────────────────────────────────────────────────────────────┤
 │ Fixed sprint scope │ Reserve 30-40% capacity for unplanned work                         │
 ├────────────────────┼────────────────────────────────────────────────────────────────────┤
@@ -125,27 +125,27 @@ An operations-focused team has different realities than a product team:
 
 ---
 
-### Retained Responsibilities
+### What We Still Own
 
-As the former Transition and Release Management team, we retain critical functions:
+We were Transition and Release Management a week ago. That work doesn't disappear:
 
-- **CAB Representation** — Continue to provide operational voice in Change Advisory Board
-- **Release Governance** — Maintain quality gates and go-live readiness assessments
-- **Operational Stability** — Ensure production systems remain reliable through change
+- **CAB** — We're still the operational voice in Change Advisory Board
+- **Release governance** — We still own quality gates and go-live readiness
+- **Keeping prod stable** — That's still on us
 
 ---
 
 ### Project Manager vs Scrummaster
 
-These roles are **not interchangeable**. A transition from PM to Scrummaster requires a fundamental mindset shift.
+These aren't the same role. Moving from PM to Scrummaster is a mindset shift, not a title change.
 
-| Aspect | Project Manager | Scrummaster |
+| | Project Manager | Scrummaster |
 |--------|-----------------|-------------|
 | **Focus** | Scope, timeline, budget | Process health, team dynamics |
-| **Accountability** | Delivery outcomes | Team effectiveness |
+| **Accountable for** | Delivery outcomes | Team effectiveness |
 | **Approach** | Directs and controls | Facilitates and serves |
 | **Stakeholders** | Manages expectations | Shields team from interference |
-| **Authority** | "What" and "when" | "How we work together" |
+| **Decides** | "What" and "when" | "How we work together" |
 
 ```
     PROJECT MANAGER                    SCRUMMASTER
@@ -160,43 +160,41 @@ These roles are **not interchangeable**. A transition from PM to Scrummaster req
 
 ---
 
-### Scrummaster Role in DevOps
+### What a Scrummaster Actually Does
 
-The Scrummaster serves the team by:
-
-| Responsibility | What This Means |
+| Responsibility | In Practice |
 |----------------|-----------------|
-| **Surface impediments** | Make visible when the team is blocked or overloaded |
-| **Monitor WIP** | Flag when work-in-progress exceeds sustainable capacity |
-| **Protect focus** | Shield the team from unplanned interruptions where possible |
-| **Facilitate ceremonies** | Run standups, retrospectives, planning, reviews |
-| **Coach practices** | Help team continuously improve how they work |
+| **Surface impediments** | Flag when we're blocked or overloaded |
+| **Monitor WIP** | Call it out when there's too much in flight |
+| **Protect focus** | Push back on unplanned interruptions where possible |
+| **Facilitate ceremonies** | Run standups, retros, planning, reviews |
+| **Coach practices** | Help us get better at how we work |
 
-The Scrummaster **does not**: own delivery timelines, define metrics unilaterally, or replace technical/operational leadership.
+What they **don't** do: own delivery timelines, define metrics on their own, or replace tech leads.
 
 ---
 
-### Prerequisites for Success
+### What Needs to Be in Place First
 
-Before Scrum can function effectively:
+Before Scrum actually works for us:
 
 ```
 ┌──────────────────────────────────────────────────────────┐
 │                                                          │
 │  ☐  Backlog grooming established and maintained          │
 │  ☐  Clear product ownership defined                      │
-│  ☐  QA integration into team workflow                    │
+│  ☐  QA integrated into how we work                       │
 │  ☐  Shared understanding of "done"                       │
-│  ☐  Space for operational/unplanned work in sprints      │
+│  ☐  Space in sprints for ops/unplanned work              │
 │                                                          │
 └──────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-### Balancing Culture
+### Where We Sit
 
-The DevOps team sits at the intersection of:
+We're in the middle — and that's the point:
 
 ```
         ┌─────────────┐
@@ -206,8 +204,8 @@ The DevOps team sits at the intersection of:
                │
                ▼
         ┌─────────────┐
-        │   DEVOPS    │◄────  Balanced voice for
-        │             │       both perspectives
+        │   DEVOPS    │◄────  We speak both languages
+        │             │
         └──────┬──────┘
                │
                ▼
@@ -217,17 +215,17 @@ The DevOps team sits at the intersection of:
         └─────────────┘
 ```
 
-We advocate for a healthy balance — neither pure project velocity nor pure operational caution, but informed decision-making that considers both.
+We're not here to slow things down or rush things through. We're here to make sure decisions account for both sides.
 
 ---
 
-### Summary
+### TL;DR
 
-1. We adopt Scrum while remaining open about its limitations for ops work
-2. Project Manager ≠ Scrummaster — the roles require different mindsets
-3. We retain CAB and release governance responsibilities
-4. Focus remains on quality and operational stability
-5. Backlog grooming and clear ownership are prerequisites
+1. We'll adopt Scrum, but it needs adapting for ops work
+2. Project Manager ≠ Scrummaster — different roles, different mindsets
+3. We still own CAB and release governance
+4. Quality and stability stay front and centre
+5. Backlog grooming and clear ownership need to happen first
 
 ---
 
